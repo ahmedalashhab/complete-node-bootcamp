@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/complete-node-bootcamp.iml" filepath="$PROJECT_DIR$/.idea/complete-node-bootcamp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/NodeJS Tutorial.iml" filepath="$PROJECT_DIR$/.idea/NodeJS Tutorial.iml" />
     </modules>
   </component>
 </project>
