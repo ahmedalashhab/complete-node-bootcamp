@@ -28,7 +28,7 @@ app.use(`/api/${versionNumber}/tours`, tourRouter);
 app.use(`/api/${versionNumber}/users`, userRouter);
 
 app.all('*', (req, res, next) => {
-  next(new AppError(`Can't find ${req.originalUrl} on this sever!`, 404));
+  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
 
 app.use(globalErrorHandler);
