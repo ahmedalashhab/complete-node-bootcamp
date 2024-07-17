@@ -1,18 +1,23 @@
 const express = require('express');
 const tourController = require('./../controllers/tourController');
+const authController = require('../controllers/authController');
 
 const router = express.Router();
 
 // router.param('id', tourController.checkID);
 
-const { createTour } = tourController;
-const { getTour } = tourController;
-const { updateTour } = tourController;
-const { getAllTours } = tourController;
-const { deleteTour } = tourController;
-const { aliasTopTours } = tourController;
-const { getTourStats } = tourController;
-const { getMonthlyPlan } = tourController;
+const {
+  createTour,
+  getTour,
+  updateTour,
+  getAllTours,
+  deleteTour,
+  aliasTopTours,
+  getTourStats,
+  getMonthlyPlan,
+} = tourController;
+
+const { protect } = authController;
 
 // Create a checkBody middleware
 // Check if body contains the name and price property
@@ -26,7 +31,7 @@ router.route('/tour-stats').get(getTourStats);
 
 router.route('/monthly-plan/:year').get(getMonthlyPlan);
 
-router.route(`/`).get(getAllTours).post(createTour);
+router.route(`/`).get(protect, getAllTours).post(createTour);
 
 router.route(`/:id`).get(getTour).patch(updateTour).delete(deleteTour);
 
